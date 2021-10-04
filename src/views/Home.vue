@@ -1,18 +1,44 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <NavBar/>
+  <LandingPage />
+  <ProductsPage @openPopUp="openPopUp"/>
+  <PurchasePopUp :visible="visible" @closePopUp="closePopUp"/>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import LandingPage from '@/components/LandingPage.vue';
+import ProductsPage from '@/components/ProductsPage.vue';
+import PurchasePopUp from '@/components/PurchasePopUp.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    LandingPage,
+    ProductsPage,
+    PurchasePopUp,
+  },
+  data() {
+    return {
+      visible: false,
+      id: 0,
+    };
+  },
+  methods: {
+    openPopUp(id: number) {
+      console.log('open');
+      this.$store.commit('setProduct', id);
+      this.visible = true;
+      document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    },
+    closePopUp() {
+      console.log('ehehe');
+      this.visible = false;
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    },
   },
 })
 export default class Home extends Vue {}
 </script>
+
+<style lang="scss" scoped>
+</style>
