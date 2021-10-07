@@ -24,15 +24,13 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
       headers: this.headers,
     })
       .then((response: AxiosResponse) => {
-        this.stat = response.data.map((data: any) => {
-          return {
-            price: data.price,
-          };
-        });
+        this.stat = response.data.map((data: any) => ({
+          price: data.price,
+        }));
       })
       .catch((error: AxiosError) => {
         console.error(error);
-      })
+      });
   },
 })
 export default class DashGraph extends Vue {}

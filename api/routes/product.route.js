@@ -1,8 +1,8 @@
 const express = require('express');
 
 // Import middlewares
-const auth = require("../middleware/auth");
-const { admin } = require("../middleware/roles");
+const auth = require('../middleware/auth');
+const { admin } = require('../middleware/roles');
 
 const routes = express.Router();
 
