@@ -1,13 +1,12 @@
 import axios, { AxiosResponse } from 'axios';
 import { createStore } from 'vuex';
 
-const BASE_URL = 'http://localhost:4000';
-
 export default createStore({
   state: {
     product: {},
     unlockCode: '',
     products: [],
+    BASE_URL: 'https://gandria-store.herokuapp.com',
   },
   getters: {
     getProduct: (state) => state.product,
@@ -16,7 +15,7 @@ export default createStore({
   },
   mutations: {
     setProduct: (state, id) => {
-      axios.get(`${BASE_URL}/product/${id}`)
+      axios.get(`${state.BASE_URL}/product/${id}`)
         .then((response: AxiosResponse) => {
           if (response.status === 200) {
             state.product = response.data;
@@ -27,7 +26,7 @@ export default createStore({
       state.unlockCode = code;
     },
     setProducts: (state) => {
-      axios.get(`${BASE_URL}/product`)
+      axios.get(`${state.BASE_URL}/product`)
         .then((response: AxiosResponse) => {
           state.products = response.data;
         });

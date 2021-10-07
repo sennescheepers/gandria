@@ -28,7 +28,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
   },
   methods: {
     login() {
-      axios.post('http://localhost:4000/user/login', {
+      axios.post(`${this.$store.state.BASE_URL}/user/login`, {
         email: this.email,
         password: this.password,
       })

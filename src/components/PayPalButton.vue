@@ -65,7 +65,7 @@ declare const window: any;
                 price: this.product.price,
                 date: Date.now(),
               };
-              axios.post('http://localhost:4000/unlockCode/add', unlockCode)
+              axios.post(`${this.$store.state.BASE_URL}/unlockCode/add`, unlockCode)
                 .then((response: any) => {
                   if (response.status === 200) {
                     this.$store.commit('setUnlockCode', unlockCode.id);

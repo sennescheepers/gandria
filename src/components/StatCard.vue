@@ -24,7 +24,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
   },
   methods: {
     getRevenue() {
-      axios.get('http://localhost:4000/unlockCode', {
+      axios.get(`${this.$store.state.BASE_URL}/unlockCode`, {
         headers: this.headers,
       })
         .then((response: AxiosResponse) => {
@@ -43,7 +43,7 @@ import axios, { AxiosError, AxiosResponse } from 'axios';
         });
     },
     getOrders() {
-      axios.get('http://localhost:4000/unlockCode', {
+      axios.get(`${this.$store.state.BASE_URL}/unlockCode`, {
         headers: this.headers,
       })
         .then((response: AxiosResponse) => {

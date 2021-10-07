@@ -4,8 +4,8 @@
       <h1>Welcome</h1>
       <span>We design and build great watch faces for your Garmin watch.</span
       ><br />
-      <a href="#watch-faces" class="desktop">Discover</a>
-      <a href="#watch-faces" class="mobile"
+      <a v-on:click="scrollTo('watch-faces')" class="desktop">Discover</a>
+      <a v-on:click="scrollTo('watch-faces')" href="#watch-faces" class="mobile"
         >Watch Faces <i class="fas fa-angle-down"></i
       ></a>
     </div>
@@ -22,6 +22,11 @@ import { Options, Vue } from 'vue-class-component';
 
 @Options({
   components: {
+  },
+  methods: {
+    scrollTo(id: string) {
+      const res = document.getElementById(id)?.scrollIntoView();
+    },
   },
 })
 export default class LandingPage extends Vue {}
@@ -70,6 +75,7 @@ export default class LandingPage extends Vue {}
       font-size: medium;
       border-radius: 5px;
       transition: 0.3s ease-in-out;
+      cursor: pointer;
 
       i {
         margin-left: 10px;
