@@ -9,8 +9,8 @@
           <td>${{ this.product.price }}</td>
         </tr>
         <tr>
-          <td><b>Total</b></td>
-          <td><b>${{ this.product.price }}</b></td>
+          <td><strong>Total</strong></td>
+          <td><strong>${{ this.product.price }}</strong></td>
         </tr>
       </table>
       <PaypalButton />
@@ -27,9 +27,6 @@ import PaypalButton from '@/components/PayPalButton.vue';
   components: {
     PaypalButton,
   },
-  mounted() {
-    console.log(this.$store.getters.getProduct);
-  },
   computed: {
     product() {
       return this.$store.getters.getProduct;
@@ -40,6 +37,8 @@ export default class CheckOut extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+@import '@/scss/variables.scss';
+
 .container {
   width: 90%;
   height: 100%;
@@ -89,11 +88,25 @@ export default class CheckOut extends Vue {}
     width: 80%;
     text-align: center;
   }
+
+  strong {
+    font-weight: $fw-semi-bold;
+  }
 }
 
 @media (max-width: 1200px) {
-  #checkout {
-    width: 80%;
+  .container {
+    #checkout {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    #checkout {
+      width: 90%;
+    }
   }
 }
 </style>

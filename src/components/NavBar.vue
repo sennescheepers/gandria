@@ -51,7 +51,7 @@ import { Options, Vue } from 'vue-class-component';
     });
   },
 })
-export default class PaypalButton extends Vue {}
+export default class NavBar extends Vue {}
 </script>
 
 <style lang='scss' scoped>
@@ -181,50 +181,6 @@ export default class PaypalButton extends Vue {}
     display: none;
   }
 }
-
-/*#navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 15px 0;
-    transition: .5s;
-    z-index: +10;
-
-    .container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: fleend;
-
-        span {
-            padding: 5px 10px;
-            display: inline-block;
-
-            a {
-                text-decoration: none;
-                color: $color-text-dark;
-                cursor: pointer;
-                transition: .1s ease-in-out;
-            }
-
-            a:hover {
-                font-weight: $fw-semi-bold;
-            }
-        }
-
-        span#logo {
-            font-size: larger;
-            font-weight: $fw-semi-bold;
-            margin-right: auto;
-        }
-
-        span.current a {
-            font-weight: $fw-semi-bold;
-        }
-    }
-}*/
 
 #navbar.opague {
     background: #fff;

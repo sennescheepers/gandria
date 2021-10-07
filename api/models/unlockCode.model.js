@@ -15,6 +15,12 @@ const UnlockCode = new Schema({
   payerEmail: {
     type: String,
   },
+  price: {
+    type: Number,
+  },
+  date: {
+    type: Number,
+  },
 }, {
   collection: 'unlock-codes',
 });

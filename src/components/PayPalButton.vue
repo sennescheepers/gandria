@@ -62,6 +62,8 @@ declare const window: any;
                 id: details.id,
                 watchFace: this.product.description.toLowerCase().replace(/\s+/g, ''),
                 payerEmail: details.payer.email_address,
+                price: this.product.price,
+                date: Date.now(),
               };
               axios.post('http://localhost:4000/unlockCode/add', unlockCode)
                 .then((response: any) => {

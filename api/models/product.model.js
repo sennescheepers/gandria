@@ -18,6 +18,9 @@ const Product = new Schema({
   qr: {
     type: String,
   },
+  url: {
+    type: String,
+  },
 }, {
   collection: 'products',
 });

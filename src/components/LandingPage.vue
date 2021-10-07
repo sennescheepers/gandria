@@ -1,5 +1,4 @@
 <template>
-  <NavBar />
   <section id="landing-page">
     <div class="container">
       <h1>Welcome</h1>
@@ -20,11 +19,9 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import NavBar from '@/components/NavBar.vue';
 
 @Options({
   components: {
-    NavBar,
   },
 })
 export default class LandingPage extends Vue {}

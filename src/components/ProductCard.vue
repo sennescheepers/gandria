@@ -33,6 +33,7 @@ export default class ProductCard extends Vue {}
     align-items: center;
     flex-direction: column;
     width: fit-content;
+    margin-bottom: 50px;
 
     #card {
         background: $color-card-background;

@@ -1,11 +1,15 @@
 const express = require('express');
 
+// Import middlewares
+const auth = require("../middleware/auth");
+const { admin } = require("../middleware/roles");
+
 const routes = express.Router();
 
 const Product = require('../models/product.model');
 
 // Get one product by id
-routes.route('/:id').get((req, res) => {
+routes.get('/:id', (req, res) => {
   const { id } = req.params;
   Product.findOne({
     _id: id,
@@ -19,8 +23,7 @@ routes.route('/:id').get((req, res) => {
 });
 
 // Get all products
-routes.route('/').get((req, res) => {
-  const { id } = req.params;
+routes.get('/', (req, res) => {
   Product.find((err, products) => {
     if (err) {
       res.status(400).json(err);
@@ -31,7 +34,7 @@ routes.route('/').get((req, res) => {
 });
 
 // Add product
-routes.route('/').post((req, res) => {
+routes.post('/', [auth, admin], (req, res) => {
   const product = new Product(req.body);
   product.save()
     .then(() => {
@@ -42,7 +45,7 @@ routes.route('/').post((req, res) => {
     });
 });
 
-routes.route('/:id').put((req, res) => {
+routes.put('/:id', [auth, admin], (req, res) => {
   const query = { _id: req.params.id };
   Product.updateOne(query, { $set: req.body })
     .then(() => {

@@ -7,12 +7,14 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import NavBar from '@/components/NavBar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import ProductsPage from '@/components/ProductsPage.vue';
 import PurchasePopUp from '@/components/PurchasePopUp.vue';
 
 @Options({
   components: {
+    NavBar,
     LandingPage,
     ProductsPage,
     PurchasePopUp,
@@ -25,13 +27,11 @@ import PurchasePopUp from '@/components/PurchasePopUp.vue';
   },
   methods: {
     openPopUp(id: number) {
-      console.log('open');
       this.$store.commit('setProduct', id);
       this.visible = true;
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
     },
     closePopUp() {
-      console.log('ehehe');
       this.visible = false;
       document.getElementsByTagName('body')[0].style.overflow = 'auto';
     },
