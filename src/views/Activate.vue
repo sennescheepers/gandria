@@ -8,8 +8,8 @@
          need it again! To activate your watch face open up the ConnectIQ app and go to your devices
         , now press on {{ this.$store.getters.getProduct.name || "NO PRODUCT" }} and go to the
          settings, paste the code in the input field and save the settings. Your watch face should
-          now be activated. A more detailed guide can be found in the <router-link to="/FAQ">
-        FAQ</router-link>.
+          now be activated. <!-- A more detailed guide can be found in the <router-link to="/FAQ">
+        FAQ</router-link>. -->
     </p>
 </div>
 </template>

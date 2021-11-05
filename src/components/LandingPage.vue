@@ -2,10 +2,9 @@
   <section id="landing-page">
     <div class="container">
       <h1>Welcome</h1>
-      <span>We design and build great watch faces for your Garmin watch.</span
-      ><br />
+      <span>We design and build great watch faces for your Garmin watch.</span><br/>
       <a v-on:click="scrollTo('watch-faces')" class="desktop">Discover</a>
-      <a v-on:click="scrollTo('watch-faces')" href="#watch-faces" class="mobile"
+      <a v-on:click="scrollTo('watch-faces')" class="mobile"
         >Watch Faces <i class="fas fa-angle-down"></i
       ></a>
     </div>

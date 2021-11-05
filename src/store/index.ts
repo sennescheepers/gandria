@@ -6,7 +6,7 @@ export default createStore({
     product: {},
     unlockCode: '',
     products: [],
-    BASE_URL: 'https://gandria-store.herokuapp.com',
+    BASE_URL: process.env.VUE_APP_BASE_URL || 'http://localhost:4000',
   },
   getters: {
     getProduct: (state) => state.product,

@@ -2,21 +2,21 @@
   <nav id="navbar">
       <div class="container">
           <span id="logo">Gandria</span>
-          <span class="current"><a href="#landing-page">HOME</a></span>
-          <span><a href="#watch-faces">WATCH FACES</a></span>
-          <span>REVIEWS</span>
+          <span class="current"><a v-on:click="scrollTo('landing-page')">HOME</a></span>
+          <span><a v-on:click="scrollTo('watch-faces')" >WATCH FACES</a></span>
+          <span><a v-on:click="scrollTo('reviews')" >REVIEWS</a></span>
           <span>ABOUT</span>
-          <span><a href="#">FAQ</a></span>
+          <!-- <span><a>FAQ</a></span> -->
           <span id="hamburger" v-on:click="openMenu()"><i class="fas fa-bars"></i></span>
       </div>
   </nav>
   <section id="menu" :class="[menuOpen ? 'active' : '']">
     <span id="close"  v-on:click="closeMenu()"><i class="fas fa-times"></i></span>
-    <span class="current" v-on:click="closeMenu()"><a href="#landing-page">HOME</a></span>
-    <span><a href="#watch-faces" v-on:click="closeMenu()">WATCH FACES</a></span>
-    <span v-on:click="closeMenu()">REVIEWS</span>
+    <span class="current" v-on:click="closeMenu(), scrollTo('landing-page')"><a>HOME</a></span>
+    <span><a v-on:click="closeMenu(), scrollTo('watch-faces')">WATCH FACES</a></span>
+    <span v-on:click="closeMenu(), scrollTo('reviews')">REVIEWS</span>
     <span v-on:click="closeMenu()">ABOUT</span>
-    <span v-on:click="closeMenu()"><a href="#">FAQ</a></span>
+    <!-- <span v-on:click="closeMenu()"><a>FAQ</a></span> -->
   </section>
 </template>
 
@@ -38,6 +38,9 @@ import { Options, Vue } from 'vue-class-component';
     closeMenu() {
       this.menuOpen = false;
       document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    },
+    scrollTo(id: string) {
+      const res = document.getElementById(id)?.scrollIntoView();
     },
   },
   mounted() {

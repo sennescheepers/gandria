@@ -3,6 +3,7 @@
   <LandingPage />
   <ProductsPage @openPopUp="openPopUp"/>
   <PurchasePopUp :visible="visible" @closePopUp="closePopUp"/>
+  <ReviewsPage />
 </template>
 
 <script lang="ts">
@@ -11,6 +12,7 @@ import NavBar from '@/components/NavBar.vue';
 import LandingPage from '@/components/LandingPage.vue';
 import ProductsPage from '@/components/ProductsPage.vue';
 import PurchasePopUp from '@/components/PurchasePopUp.vue';
+import ReviewsPage from '@/components/ReviewsPage.vue';
 
 @Options({
   components: {
@@ -18,6 +20,7 @@ import PurchasePopUp from '@/components/PurchasePopUp.vue';
     LandingPage,
     ProductsPage,
     PurchasePopUp,
+    ReviewsPage,
   },
   data() {
     return {

@@ -3,9 +3,9 @@
     <DashNav :component="this.component" @setComponent="setComponent" />
     <div class="right">
         <Dashboard v-if="checkComponent('dashboard')" />
-        <h1 v-if="checkComponent('sales')">Sales</h1>
-        <h1 v-if="checkComponent('products')">Products</h1>
-        <h1 v-if="checkComponent('users')">Users</h1>
+        <Sales v-if="checkComponent('sales')" />
+        <Products v-if="checkComponent('products')" />
+        <Users v-if="checkComponent('users')" />
     </div>
   </div>
 </template>
@@ -14,11 +14,17 @@
 import { Options, Vue } from 'vue-class-component';
 import DashNav from '@/components/DashNav.vue';
 import Dashboard from '@/components/Dashboard.vue';
+import Products from '@/components/Products.vue';
+import Users from '@/components/Users.vue';
+import Sales from '@/components/Sales.vue';
 
 @Options({
   components: {
     DashNav,
     Dashboard,
+    Products,
+    Users,
+    Sales,
   },
   data() {
     return {

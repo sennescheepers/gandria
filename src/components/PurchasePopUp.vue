@@ -18,7 +18,7 @@
       <article id="purchase" v-on:click.stop v-if="product.price > 0.0">
         <h1>Purchase</h1>
         <span>Click the button below to unlock this watch face.</span>
-        <router-link to="/checkout">Purchase</router-link>
+        <router-link to="/checkout" v-on:click="close()">Purchase</router-link>
       </article>
   </section>
 </template>
@@ -89,7 +89,7 @@ export default class PurchasePopUp extends Vue {}
             padding: 10px;
             display: flex;
             flex-direction: column;
-            align-items: start;
+            align-items: flex-start;
             justify-content: center;
             box-sizing: border-box;
 

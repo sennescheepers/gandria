@@ -4,6 +4,8 @@ import CheckOut from '@/views/CheckOut.vue';
 import Activate from '@/views/Activate.vue';
 import Login from '@/views/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
+import AddProduct from '@/views/AddProduct.vue';
+import AddUser from '@/views/AddUser.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -30,6 +32,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+  },
+  {
+    path: '/add/product',
+    name: 'Add product',
+    component: AddProduct,
+  },
+  {
+    path: '/add/user',
+    name: 'Add user',
+    component: AddUser,
   },
 ];
 
